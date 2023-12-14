@@ -1,7 +1,9 @@
 const express = require("express");
 var cors = require("cors");
+const env = require("dotenv").config();
 const bodyParser = require("body-parser");
 require("./db/conn");
+const port = process.env.PORT || 5002;
 const Startup = require("./models/startups");
 
 const app = express();
@@ -62,6 +64,6 @@ app.post("/register", async (req, res) => {
   }
 });
 
-app.listen(5001, () => {
-  console.log("app is running on port 5001");
+app.listen(port, () => {
+  console.log(`app is running on port ${port}`);
 });

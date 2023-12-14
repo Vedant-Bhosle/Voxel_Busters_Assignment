@@ -10,7 +10,7 @@ function Card() {
 
   const getAllStatups = async () => {
     try {
-      const res = await Axios.get("http://localhost:5001/getstartups");
+      const res = await Axios.get("http://localhost:5002/getstartups");
 
       if (res.status === 200) {
         console.log("Startupdata succesfully fetched");
