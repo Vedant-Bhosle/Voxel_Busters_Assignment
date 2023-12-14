@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 
 function AddStartUp() {
+  const { REACT_APP_API } = process.env;
   const navigate = useNavigate();
   const [data, setdata] = useState({
     StartupName: "",
@@ -31,10 +32,7 @@ function AddStartUp() {
 
   const submitForm = async () => {
     try {
-      const res = await Axios.post(
-        "https://voxel-busters-assignment-server.vercel.app/register",
-        data
-      );
+      const res = await Axios.post(`${REACT_APP_API}/register`, data);
 
       if (res.status === 201) {
         console.log("hereeeeeeee");

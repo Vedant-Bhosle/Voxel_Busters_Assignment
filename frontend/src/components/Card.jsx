@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import CardCompnent from "./CardCompnent";
 import Axios from "axios";
 function Card() {
+  const { REACT_APP_API } = process.env;
+
   const [selects, setselects] = useState("");
   const [startupdata, setstartupdata] = useState([]);
   const [originaldata, setoriginaldata] = useState([]);
@@ -10,9 +12,7 @@ function Card() {
 
   const getAllStatups = async () => {
     try {
-      const res = await Axios.get(
-        "https://voxel-busters-assignment-server.vercel.app/getstartups"
-      );
+      const res = await Axios.get(`${REACT_APP_API}/getstartups`);
 
       if (res.status === 200) {
         console.log("Startupdata succesfully fetched");
