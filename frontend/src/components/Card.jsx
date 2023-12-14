@@ -18,7 +18,7 @@ function Card() {
         console.log("Startupdata succesfully fetched");
 
         setstartupdata(res.data.allStartups);
-        setoriginaldata(startupdata);
+        setoriginaldata(res.data.allStartups);
       }
     } catch (e) {
       console.log("Error in finding startup data");
@@ -35,7 +35,7 @@ function Card() {
         startup.IndustryVertical !== undefined &&
         startup.IndustryVertical.toLowerCase().includes(selects.toLowerCase())
     );
-
+    // console.log(filteredStartups);
     setstartupdata(filteredStartups);
   };
 
