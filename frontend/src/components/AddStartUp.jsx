@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom";
 
 function AddStartUp() {
+  const navigate = useNavigate();
   const [data, setdata] = useState({
     StartupName: "",
     CityLocation: "",
@@ -29,12 +31,15 @@ function AddStartUp() {
 
   const submitForm = async () => {
     try {
-      const res = await Axios.post("http://localhost:5001/register", data);
+      const res = await Axios.post(
+        "https://voxel-busters-assignment-server.vercel.app/register",
+        data
+      );
 
       if (res.status === 201) {
         console.log("hereeeeeeee");
         window.alert("Sucessfully registerd!!");
-        // navigate("/signin")
+        navigate("/");
       }
       // window.alert("submitted");
       // console.log("wind");

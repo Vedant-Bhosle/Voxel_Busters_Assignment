@@ -10,7 +10,9 @@ function Card() {
 
   const getAllStatups = async () => {
     try {
-      const res = await Axios.get("http://localhost:5002/getstartups");
+      const res = await Axios.get(
+        "https://voxel-busters-assignment-server.vercel.app/getstartups"
+      );
 
       if (res.status === 200) {
         console.log("Startupdata succesfully fetched");
