@@ -69,14 +69,14 @@ function Card() {
           </select>
         </div>
         <button
-          className="py-2 px-3 mt-5 md:mt-0 md:ml-5 bg-blue-600 text-white font-sans font-bold rounded-3xl"
+          className="py-2 px-3 mt-5 md:mt-0 md:ml-5  bg-blue-600 text-white font-sans font-bold rounded-3xl"
           onClick={handlesubmit}
         >
           Submit
         </button>
       </h1>
       {/* card section */}
-      <div class="flex flex-wrap justify-center md:ml-10 md:mr-10  gap-5 mt-10 ">
+      <div class="flex flex-wrap justify-center md:ml-10 md:mr-10  ml-10 mr-10 gap-5 mt-10 ">
         {startupdata.length !== 0 ? (
           startupdata.map((item) => {
             return <CardCompnent key={item._id} data={item} />;

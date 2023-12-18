@@ -12,7 +12,7 @@ function CardCompnent({ data }) {
     <div class="p-5   max-w-md">
       <span
         onClick={() => setshowmodal(true)}
-        class="flex rounded-lg w-96 shadow-lg hover:shadow-2xl border border-blue-100 h-full  bg-white p-8  flex-col"
+        class="flex rounded-lg w-80 md:w-96 shadow-lg hover:shadow-2xl border border-blue-100 h-full  bg-white p-8  flex-col"
       >
         <div class="flex items-center  mb-3">
           <h2 class="text-blue-950  text-3xl  font-medium">
